@@ -13,6 +13,7 @@ public class propertyDataController {
     @Autowired
     private propertyDataService propertyService;
 
+    @CrossOrigin("http://localhost:4200")
     @GetMapping
     public List<propertyDataEntry> getAllProperties() {
         return propertyService.getAllProperties();
