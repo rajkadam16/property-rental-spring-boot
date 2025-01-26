@@ -40,17 +40,6 @@ public class propertyDataEntry {
     private PropertySchoolData propertySchoolData;
     private ContactPropertyBox contactpropertybox;
 
-//    public String getId() {
-//        return id;
-//    }
-//
-//    public void setId(String id) {
-//        this.id = id;
-//    }
-
-    // Nested classes for complex types
-    // Getter and Setter for id
-
     @Data
     public static class PropertyImgGallery {
         private String id;
@@ -91,7 +80,7 @@ public class propertyDataEntry {
     public static class AboutProperty {
         private String heading;
         private String description;
-        private List<String> details;
+        private String details;
     }
 
     @Data

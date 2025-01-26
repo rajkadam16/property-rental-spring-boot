@@ -2,6 +2,7 @@ package com.propertyRental.demo.controller;
 import com.propertyRental.demo.entity.propertyDataEntry;
 import com.propertyRental.demo.service.propertyDataService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,10 +25,16 @@ public class propertyDataController {
         return propertyService.getPropertyById(id);
     }
 
+
     @PostMapping
-    public propertyDataEntry addProperty(@RequestBody propertyDataEntry property) {
-        return propertyService.addProperty(property);
+    public ResponseEntity<propertyDataEntry> createProperty(@RequestBody propertyDataEntry propertyDataEntry) {
+        propertyDataEntry savedProperty = propertyService.saveProperty(propertyDataEntry);
+        return ResponseEntity.ok(savedProperty);
     }
+//    @PostMapping
+//    public propertyDataEntry addProperty(@RequestBody propertyDataEntry property) {
+//        return propertyService.addProperty(property);
+//    }
 
     @PutMapping("/{id}")
     public propertyDataEntry updateProperty(@PathVariable String id, @RequestBody propertyDataEntry property) {
