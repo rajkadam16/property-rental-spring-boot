@@ -31,10 +31,6 @@ public class propertyDataController {
         propertyDataEntry savedProperty = propertyService.saveProperty(propertyDataEntry);
         return ResponseEntity.ok(savedProperty);
     }
-//    @PostMapping
-//    public propertyDataEntry addProperty(@RequestBody propertyDataEntry property) {
-//        return propertyService.addProperty(property);
-//    }
 
     @PutMapping("/{id}")
     public propertyDataEntry updateProperty(@PathVariable String id, @RequestBody propertyDataEntry property) {

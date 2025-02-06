@@ -22,9 +22,7 @@ public class propertyDataService {
     public propertyDataEntry saveProperty(propertyDataEntry propertyDataEntry) {
         return propertyRepository.save(propertyDataEntry);
     }
-//    public propertyDataEntry addProperty(propertyDataEntry property) {
-//        return propertyRepository.save(property);
-//    }
+
 
     public propertyDataEntry updateProperty(String id, propertyDataEntry property) {
         property.setId(id);
